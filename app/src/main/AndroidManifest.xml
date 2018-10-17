@@ -24,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Retrofit.RelogionBtnActivity" />
+        <activity android:name=".Retrofit.GenderActivity"></activity>
     </application>
 
 </manifest>
