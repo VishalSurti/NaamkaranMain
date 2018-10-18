@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Retrofit.RelogionBtnActivity" />
-        <activity android:name=".Retrofit.GenderActivity"></activity>
+        <activity android:name=".Retrofit.GenderActivity" />
     </application>
 
 </manifest>
