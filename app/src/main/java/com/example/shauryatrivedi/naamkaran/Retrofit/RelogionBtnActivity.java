@@ -25,7 +25,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
-                intent.putExtra()
+//                intent.putExtra();
             }
         });
 
