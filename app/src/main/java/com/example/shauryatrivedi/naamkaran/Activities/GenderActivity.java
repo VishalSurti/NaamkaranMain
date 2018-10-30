@@ -1,4 +1,4 @@
-package com.example.shauryatrivedi.naamkaran.Retrofit;
+package com.example.shauryatrivedi.naamkaran.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.shauryatrivedi.naamkaran.MainActivity;
 import com.example.shauryatrivedi.naamkaran.R;
 
 public class GenderActivity extends AppCompatActivity {
@@ -24,7 +23,7 @@ public class GenderActivity extends AppCompatActivity {
         imgBtnMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GenderActivity.this,MainActivity.class);
+                Intent intent=new Intent(GenderActivity.this,RelogionBtnActivity.class);
                 intent.putExtra("Gender","1");
                 GenderActivity.this.startActivity(intent);
             }
@@ -33,7 +32,7 @@ public class GenderActivity extends AppCompatActivity {
         imgBtnFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GenderActivity.this,MainActivity.class);
+                Intent intent=new Intent(GenderActivity.this,RelogionBtnActivity.class);
                 intent.putExtra("Gender","2");
                 GenderActivity.this.startActivity(intent);
             }

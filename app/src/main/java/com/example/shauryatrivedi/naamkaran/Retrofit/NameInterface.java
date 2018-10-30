@@ -11,7 +11,7 @@ public interface NameInterface {
 //    @GET("category_list")
 //    Call<List<Categorylist>> get_Category(@Query("cat_name") String cat_name, @Query("cat_id ") String cat_id );
 
-    @GET("post_list_by_cat_and_gender?")
+    @GET("post_list_by_cat_and_gender?category_id=8&gender=1")
     Call<List<GenderApi>> get_Gender(@Query("category_id") String categ_id,@Query("gender") String gender);
 }
 // id;
