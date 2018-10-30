@@ -5,23 +5,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.shauryatrivedi.naamkaran.R;
+import com.example.shauryatrivedi.naamkaran.Retrofit.GenderApi;
+
+import org.w3c.dom.Text;
+
+import java.util.List;
 
 public class NameListAdapter extends BaseAdapter {
     private Context context;
     LayoutInflater inflater;
-    String[] name;
+    private List<GenderApi> list;
+    List<GenderApi> name;
     String[] mean;
-    public NameListAdapter(Context context, String[] name, String[] mean) {
+    public NameListAdapter(Context context, List<GenderApi> name) {
         this.context = context;
         this.name = name;
-        this.mean = mean;
+
         inflater=(LayoutInflater.from(context));
     }
 
 
     @Override
     public int getCount() {
-        return name.length;
+        return name.size();
     }
 
     @Override
@@ -35,7 +45,13 @@ public class NameListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int i, View view, ViewGroup viewGroup)
+    {
+        view=inflater.inflate(R.layout.name_list,null);
+        TextView txtname=(TextView) view.findViewById(R.id.txtname);
+        GenderApi info=list.get(i);
+        String nam=info.getName();
+        txtname.setText(nam);
+        return view;
     }
 }

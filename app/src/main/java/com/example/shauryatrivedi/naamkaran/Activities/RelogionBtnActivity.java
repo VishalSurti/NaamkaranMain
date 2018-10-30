@@ -1,4 +1,4 @@
-package com.example.shauryatrivedi.naamkaran.Retrofit;
+package com.example.shauryatrivedi.naamkaran.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +24,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
         imgBtnHindu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                Intent intent=new Intent(RelogionBtnActivity.this, MainActivity.class);
                 intent.putExtra("Religion","3");
                 RelogionBtnActivity.this.startActivity(intent);
             }
@@ -33,7 +33,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
         imgBtnMuslim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                Intent intent=new Intent(RelogionBtnActivity.this,MainActivity.class);
                 intent.putExtra("Religion","8");
                 RelogionBtnActivity.this.startActivity(intent);
             }
@@ -42,7 +42,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
         imgBtnChristian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                Intent intent=new Intent(RelogionBtnActivity.this,MainActivity.class);
                 intent.putExtra("Religion","10");
                 RelogionBtnActivity.this.startActivity(intent);
             }
@@ -51,7 +51,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
         imgBtnTrending.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                Intent intent=new Intent(RelogionBtnActivity.this,MainActivity.class);
                 intent.putExtra("Religion","7");
                 RelogionBtnActivity.this.startActivity(intent);
             }
@@ -61,32 +61,3 @@ public class RelogionBtnActivity extends AppCompatActivity {
 }
 
 
-//    private ImageButton imgBtnMle, imgBtnFmle;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_parsing);
-//
-//        imgBtnMle = (ImageButton)findViewById(R.id.imgBtnMale);
-//        imgBtnFmle = (ImageButton)findViewById(R.id.imgBtnFemale);
-//
-//        imgBtnMle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent int1 = new Intent(ParsingActivity.this, ParsingRetrofitActivity.class);
-//                int1.putExtra("Gender", "m");
-//                ParsingActivity.this.startActivity(int1);
-//            }
-//        });
-//
-//        imgBtnFmle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent int2 = new Intent (ParsingActivity.this, ParsingRetrofitActivity.class);
-//                int2.putExtra("Gender", "f");
-//                ParsingActivity.this.startActivity(int2);
-//            }
-//        });
-//    }
-//}
