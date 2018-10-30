@@ -25,7 +25,35 @@ public class RelogionBtnActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
-//                intent.putExtra();
+                intent.putExtra("Religion","3");
+                RelogionBtnActivity.this.startActivity(intent);
+            }
+        });
+
+        imgBtnMuslim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                intent.putExtra("Religion","8");
+                RelogionBtnActivity.this.startActivity(intent);
+            }
+        });
+
+        imgBtnChristian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                intent.putExtra("Religion","10");
+                RelogionBtnActivity.this.startActivity(intent);
+            }
+        });
+
+        imgBtnTrending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(RelogionBtnActivity.this,GenderActivity.class);
+                intent.putExtra("Religion","7");
+                RelogionBtnActivity.this.startActivity(intent);
             }
         });
 
