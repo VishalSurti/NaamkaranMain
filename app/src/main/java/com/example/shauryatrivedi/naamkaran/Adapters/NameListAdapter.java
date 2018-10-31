@@ -19,19 +19,18 @@ public class NameListAdapter extends BaseAdapter {
     private Context context;
     LayoutInflater inflater;
     private List<GenderApi> list;
-    List<GenderApi> name;
-    String[] mean;
-    public NameListAdapter(Context context, List<GenderApi> name) {
+//    List<GenderApi> name;
+//    String[] mean;
+    public NameListAdapter(Context context, List<GenderApi> list) {
         this.context = context;
-        this.name = name;
+        this.list = list;
 
         inflater=(LayoutInflater.from(context));
     }
 
-
     @Override
     public int getCount() {
-        return name.size();
+        return list.size();
     }
 
     @Override
@@ -47,10 +46,10 @@ public class NameListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup)
     {
-        view=inflater.inflate(R.layout.name_list,null);
-        TextView txtname=(TextView) view.findViewById(R.id.txtname);
-        GenderApi info=list.get(i);
-        String nam=info.getName();
+        view = inflater.inflate(R.layout.name_list,null);
+        TextView txtname = (TextView) view.findViewById(R.id.txtname);
+        GenderApi info = list.get(i);
+        String nam = info.getName();
         txtname.setText(nam);
         return view;
     }

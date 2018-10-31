@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.shauryatrivedi.naamkaran.R;
 
@@ -27,6 +28,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
                 Intent intent=new Intent(RelogionBtnActivity.this, MainActivity.class);
                 intent.putExtra("Religion","3");
                 RelogionBtnActivity.this.startActivity(intent);
+                Toast.makeText(RelogionBtnActivity.this,"Hindu",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -36,6 +38,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
                 Intent intent=new Intent(RelogionBtnActivity.this,MainActivity.class);
                 intent.putExtra("Religion","8");
                 RelogionBtnActivity.this.startActivity(intent);
+                Toast.makeText(RelogionBtnActivity.this,"Muslim",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -45,6 +48,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
                 Intent intent=new Intent(RelogionBtnActivity.this,MainActivity.class);
                 intent.putExtra("Religion","10");
                 RelogionBtnActivity.this.startActivity(intent);
+                Toast.makeText(RelogionBtnActivity.this,"Christian",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -54,6 +58,7 @@ public class RelogionBtnActivity extends AppCompatActivity {
                 Intent intent=new Intent(RelogionBtnActivity.this,MainActivity.class);
                 intent.putExtra("Religion","7");
                 RelogionBtnActivity.this.startActivity(intent);
+                Toast.makeText(RelogionBtnActivity.this,"Trending",Toast.LENGTH_SHORT).show();
             }
         });
 

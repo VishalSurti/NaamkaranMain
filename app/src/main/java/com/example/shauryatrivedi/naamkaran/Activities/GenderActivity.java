@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.shauryatrivedi.naamkaran.R;
 
@@ -26,6 +27,7 @@ public class GenderActivity extends AppCompatActivity {
                 Intent intent=new Intent(GenderActivity.this,RelogionBtnActivity.class);
                 intent.putExtra("Gender","1");
                 GenderActivity.this.startActivity(intent);
+                Toast.makeText(GenderActivity.this,"Male",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -35,6 +37,7 @@ public class GenderActivity extends AppCompatActivity {
                 Intent intent=new Intent(GenderActivity.this,RelogionBtnActivity.class);
                 intent.putExtra("Gender","2");
                 GenderActivity.this.startActivity(intent);
+                Toast.makeText(GenderActivity.this,"Female",Toast.LENGTH_SHORT).show();
             }
         });
     }
