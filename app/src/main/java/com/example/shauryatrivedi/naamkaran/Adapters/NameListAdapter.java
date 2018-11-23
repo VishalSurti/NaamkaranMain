@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import com.example.shauryatrivedi.naamkaran.R;
@@ -13,19 +14,20 @@ import com.example.shauryatrivedi.naamkaran.Retrofit.GenderApi;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
 import java.util.List;
 
-public class NameListAdapter extends BaseAdapter {
+public class NameListAdapter extends BaseAdapter implements SectionIndexer {
     private Context context;
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
     private List<GenderApi> list;
-//    List<GenderApi> name;
-//    String[] mean;
+    private HashMap<String, Integer> alphaIndexer;
+    private String[] sections;
+
     public NameListAdapter(Context context, List<GenderApi> list) {
         this.context = context;
         this.list = list;
-
-        inflater=(LayoutInflater.from(context));
+        inflater = (LayoutInflater.from(context));
     }
 
     @Override
@@ -52,5 +54,20 @@ public class NameListAdapter extends BaseAdapter {
         String nam = info.getName();
         txtname.setText(nam);
         return view;
+    }
+
+    @Override
+    public Object[] getSections() {
+        return sections;
+    }
+
+    @Override
+    public int getPositionForSection(int sectionIndex) {
+        return 0;
+    }
+
+    @Override
+    public int getSectionForPosition(int position) {
+        return alphaIndexer.get(sections[position]);
     }
 }

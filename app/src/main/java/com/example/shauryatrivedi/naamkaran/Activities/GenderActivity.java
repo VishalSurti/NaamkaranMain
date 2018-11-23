@@ -13,6 +13,7 @@ public class GenderActivity extends AppCompatActivity {
 
 
     private ImageButton imgBtnMale, imgBtnFemale;
+    private String relgn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,23 +22,27 @@ public class GenderActivity extends AppCompatActivity {
         imgBtnMale=(ImageButton)findViewById(R.id.imgBtnMale);
         imgBtnFemale=(ImageButton)findViewById(R.id.imgBtnFemale);
 
+        relgn = getIntent().getStringExtra("Religion");
+
         imgBtnMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GenderActivity.this,RelogionBtnActivity.class);
+                Intent intent = new Intent(GenderActivity.this,MainActivity.class);
                 intent.putExtra("Gender","1");
-                GenderActivity.this.startActivity(intent);
+                intent.putExtra("Religion",relgn);
                 Toast.makeText(GenderActivity.this,"Male",Toast.LENGTH_SHORT).show();
+                GenderActivity.this.startActivity(intent);
             }
         });
 
         imgBtnFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GenderActivity.this,RelogionBtnActivity.class);
+                Intent intent = new Intent(GenderActivity.this,MainActivity.class);
                 intent.putExtra("Gender","2");
-                GenderActivity.this.startActivity(intent);
+                intent.putExtra("Religion",relgn);
                 Toast.makeText(GenderActivity.this,"Female",Toast.LENGTH_SHORT).show();
+                GenderActivity.this.startActivity(intent);
             }
         });
     }
