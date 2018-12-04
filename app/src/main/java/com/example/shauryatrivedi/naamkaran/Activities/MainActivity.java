@@ -5,12 +5,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -41,10 +44,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView = (ListView)findViewById(R.id.listVw);
+        listView = (ExpandableListView)findViewById(R.id.listVw);
         gender =  getIntent().getStringExtra("Gender");
         relgn = getIntent().getStringExtra("Religion");
         Toast.makeText(MainActivity.this,"Gender is "+gender+" and Religion is "+relgn,Toast.LENGTH_SHORT).show();
+
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.layout_actionbar);
+
+        View view = getSupportActionBar().getCustomView();
+
+        ImageButton next = (ImageButton)findViewById(R.id.actnBr_fwd);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Next", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ImageButton prev = (ImageButton)findViewById(R.id.actnBr_back);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Previous", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         GetName();
     }
 

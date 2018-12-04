@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 import java.util.HashMap;
 import java.util.List;
 
-//Change to recycler view 
+//Change to recycler view
 public class NameListAdapter extends BaseAdapter implements SectionIndexer {
     private Context context;
     private LayoutInflater inflater;
