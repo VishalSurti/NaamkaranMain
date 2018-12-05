@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -36,17 +37,19 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = MainActivity.class.getSimpleName();
     private String relgn, gender;
     private NameListAdapter nameListAdapter;
-    List<GenderApi> nameList;
-    ListView listView;
+    private List<GenderApi> nameList;
+    private ListView listView;
+    private AutoCompleteTextView autoCom;
 
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView = (ExpandableListView)findViewById(R.id.listVw);
+        listView = (ListView)findViewById(R.id.listVw);
         gender =  getIntent().getStringExtra("Gender");
         relgn = getIntent().getStringExtra("Religion");
+        autoCom = (AutoCompleteTextView)findViewById(R.id.atoComTxtVw);
         Toast.makeText(MainActivity.this,"Gender is "+gender+" and Religion is "+relgn,Toast.LENGTH_SHORT).show();
 
         getSupportActionBar().setDisplayShowCustomEnabled(true);
@@ -86,18 +89,14 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i<nameList.size(); i++){
                     names[i] = nameList.get(i).getName();
                 }
-
                 nameListAdapter = new NameListAdapter(MainActivity.this,nameList);
                 listView.setAdapter(nameListAdapter);
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent int1 = new Intent(MainActivity.this,NameActivity.class);
-                        int1.putExtra("name",nameList.get(position).getName());
-                        int1.putExtra("meaning",nameList.get(position).getMeaning());
-                        startActivity(int1);
-                    }
-                });
+
+//                String[] strList = nameList.toArray(new String [nameList.size()]);
+//
+//                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.select_dialog_item, strList);
+//                autoCom.setThreshold(5);
+//                autoCom.setAdapter(adapter);
             }
 
             @Override

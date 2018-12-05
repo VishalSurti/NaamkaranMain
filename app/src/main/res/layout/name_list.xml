@@ -10,10 +10,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="11dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="5dp"
         android:text="NAME"
         android:textStyle="bold"
         android:textSize="20dp"
         android:id="@+id/txtname"/>
+
+    <TextView
+        android:id="@+id/txtmng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:text="Meaning"
+        android:textSize="20dp"
+        android:textStyle="italic"/>
 
 </RelativeLayout>

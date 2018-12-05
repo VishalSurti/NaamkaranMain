@@ -51,9 +51,15 @@ public class NameListAdapter extends BaseAdapter implements SectionIndexer {
     {
         view = inflater.inflate(R.layout.name_list,null);
         TextView txtname = (TextView) view.findViewById(R.id.txtname);
+        TextView txtmng = (TextView)view.findViewById(R.id.txtmng);
         GenderApi info = list.get(i);
         String nam = info.getName();
+        String mng = info.getMeaning();
         txtname.setText(nam);
+        txtname.setTextSize(25);
+        txtmng.setText(mng);
+        txtmng.setTextSize(20);
+
         return view;
     }
 

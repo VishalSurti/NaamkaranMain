@@ -6,13 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
-
-    <ExpandableListView
+    <ListView
+        android:id="@+id/listVw"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:fastScrollEnabled="true"
-        android:id="@+id/listVw"
-        />
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="46dp"
+        android:fastScrollEnabled="true" />
+
+    <AutoCompleteTextView
+        android:id="@+id/atoComTxtVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Search" />
 </RelativeLayout>
