@@ -30,7 +30,6 @@ public class GenderActivity extends AppCompatActivity {
                 Intent intent = new Intent(GenderActivity.this,MainActivity.class);
                 intent.putExtra("Gender","1");
                 intent.putExtra("Religion",relgn);
-                Toast.makeText(GenderActivity.this,"Male",Toast.LENGTH_SHORT).show();
                 GenderActivity.this.startActivity(intent);
             }
         });
@@ -41,7 +40,6 @@ public class GenderActivity extends AppCompatActivity {
                 Intent intent = new Intent(GenderActivity.this,MainActivity.class);
                 intent.putExtra("Gender","2");
                 intent.putExtra("Religion",relgn);
-                Toast.makeText(GenderActivity.this,"Female",Toast.LENGTH_SHORT).show();
                 GenderActivity.this.startActivity(intent);
             }
         });
